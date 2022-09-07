@@ -1,4 +1,4 @@
-package com.example.restThree;
+package com.example.restThree.Model;
 
 
 public class Employee {
