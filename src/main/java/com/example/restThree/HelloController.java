@@ -2,10 +2,7 @@ package com.example.restThree;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 
@@ -27,5 +24,18 @@ public class HelloController {
         HttpEntity<Employee> request = new HttpEntity<>(emp);
         return restTemplate.postForObject("http://localhost:8080/employeelist", request, String.class);
     }
+
+
+
+    @DeleteMapping("/hello/{id}")
+    public void helloDelete(@PathVariable int id){
+        restTemplate.delete("http://localhost:8080/employeelist"+id);
+    }
+
+    @PutMapping("/employee")
+    public void helloPut(@RequestBody Employee employee){
+        HttpEntity<Employee> request = new HttpEntity<>(employee);
+        restTemplate.put("http://localhost:8080/employeelist", request);
+
 
 }
