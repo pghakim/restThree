@@ -1,4 +1,4 @@
-package com.example.restThree.Model;
+package com.example.restThree.model;
 
 
 public class Employee {
@@ -9,8 +9,7 @@ public class Employee {
     private int id;
 
 
-    public Employee(String firstName, String lastName)
-    {
+    public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -24,10 +23,10 @@ public class Employee {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-
 
 
     public String getLastName() {
